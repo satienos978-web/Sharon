@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambua Afrika Studios - Company Profile</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #c00;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Page Styles */
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        /* Page 1 - Cover */
+        #cover {
+            background-color: rgb(103, 90, 90);
+            color: white;
+        }
+
+        #cover h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        #cover h2 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        #cover h3 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        #cover p {
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Page 2 - About Us */
+        #about {
+            background-color: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #c00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #c00;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: #c00;
+            font-weight: bold;
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+
+        /* Page 3 - Mission & Vision */
+        #mission-vision {
+            background-color: #f9f9f9;
+        }
+
+        .mission-vision-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .mission h3, .vision h3 {
+            color: #c00;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .mission p, .vision p {
+            font-size: 1.2rem;
+        }
+
+        /* Page 4 - Services */
+        #services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            padding: 30px;
+            border: 2px solid #c00;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            background-color: #c00;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Page 5 - Ink */
+        #ink {
+            background-color: #534f4f;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .services-list li {
+            text-align: left;
+            margin-bottom: 10px;
+            list-style-type: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .services-list li:before {
+            content: '•';
+            color: #c00;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Page 6 - Comics */
+        #comics {
+            background-color:  rgb(128, 117, 117);
+        }
+
+        /* Page 7 - Stage */
+        #stage {
+            background-color: #655f5f;
+        }
+
+        .stage-services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .stage-service {
+            margin: 10px;
+            padding: 15px 25px;
+            background-color: rgb(84, 78, 78);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        /* Page 8 - Contact */
+        #contact {
+            background-color: rgb(53, 50, 50);
+        }
+
+        .contact-info {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        /* Page 9 - Thank You */
+        #thank-you {
+            background-color: rgb(83, 79, 79);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .mission-vision-container {
+                flex-direction: column;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#cover">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#mission-vision">Mission & Vision</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#ink">Tambua Afrika Ink</a></li>
+            <li><a href="#comics">Comics</a></li>
+            <li><a href="#stage">Stage</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page 1 - Cover -->
+    <section id="cover" class="page">
+        <h1>COMPANY PROFILE</h1>
+        <h2>TAS</h2>
+        <h3>TAMBUA AFRIKA STUDIOS</h3>
+        <p>Africa for Recognition</p>
+    </section>
+
+    <!-- Page 2 - About Us -->
+    <section id="about" class="page">
+        <h2 class="section-title">ABOUT US</h2>
+        <div class="content">
+            <p>Tambua Afrika Studios is a creative house dedicated to producing edutainment content in:</p>
+            <p class="highlight">African literature<br>Theatre<br>Comics<br>Film and animation.</p>
+            <p>Our aim:<br>To make African stories recognised, both locally and globally, delivering them in every form possible to reach audiences from all walks of life.</p>
+            <div class="divider"></div>
+            <p><strong>Founded by:</strong><br>Ododa Emmanuel and Otieno Otenga<br>July 25, 2025.</p>
+        </div>
+    </section>
+
+    <!-- Page 3 - Mission & Vision -->
+    <section id="mission-vision" class="page">
+        <h2 class="section-title">MISSION & VISION</h2>
+        <div class="mission-vision-container">
+            <div class="mission">
+                <h3>MISSION</h3>
+                <p>To tell Africa's stories with authenticity and creativity, blending heritage with innovation, and empowering the next generation of artists through theatre, comics, film, and literary works.</p>
+            </div>
+            <div class="vision">
+                <h3>VISION</h3>
+                <p>To be Africa's leading creative house.<br>Producing world-class content that inspires, educates, and connects communities globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4 - Services -->
+    <section id="services" class="page">
+        <h2 class="section-title">OUR SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>PUBLISHING & LITERARY WRITING</h3>
+                <p>Publishing & Literary Writing</p>
+            </div>
+            <div class="service-item">
+                <h3>THEATRE PRODUCTION</h3>
+                <p>Theatre Production</p>
+            </div>
+            <div class="service-item">
+                <h3>FILM & ANIMATION PRODUCTION</h3>
+                <p>Film & Animation Production</p>
+            </div>
+            <div class="service-item">
+                <h3>COMIC ARTISTRY</h3>
+                <p>Comic Artistry</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 5 - Ink -->
+    <section id="ink" class="page">
+        <h2 class="section-title">TAMBUA AFRIKA INK</h2>
+        <p class="highlight">AFRICAN INK ON PAPER</p>
+        <div class="content">
+            <h3>About us</h3>
+            <p>We are a creative hub dedicated to amplifying African voices through:</p>
+            <ul class="services-list">
+                <li>Publishing African stories</li>
+                <li>Refining literature</li>
+                <li>Creative writing</li>
+            </ul>
+            <div class="divider"></div>
+            <h3>OUR SERVICES</h3>
+            <ul class="services-list">
+                <li>CORPORATE PRINTING SOLUTIONS</li>
+                <li>ACADEMIC PUBLISHING</li>
+                <li>CURRICULUM DEVELOPMENT SUPPORT</li>
+                <li>ARCHIVING & DOCUMENTATION</li>
+                <li>EDITING & PROOFREADING</li>
+                <li>BOOK CLUBS & READING CIRCLES</li>
+                <li>CONTENT CREATION</li>
+                <li>TRANSLATION SERVICES</li>
+                <li>E-BOOK PUBLISHING</li>
+                <li>AUDIOBOOK PRODUCTION</li>
+                <li>DIGITAL MARKETING FOR AUTHORS</li>
+                <li>AUTHOR TRAINING PROGRAMS</li>
+            </ul>
+            <div class="divider"></div>
+            <h3>WHY CHOOSE US?</h3>
+            <p><strong>Apart from editing grammar,<br>We critique your work, refining it to its best version.</strong></p>
+        </div>
+    </section>
+
+    <!-- Page 6 - Comics -->
+    <section id="comics" class="page">
+        <h2 class="section-title">TAMBUA AFRIKA COMICS</h2>
+        <p class="highlight">APERIOR IN PANELS</p>
+        <div class="content">
+            <p>WE ARE A COMIC ARTISTRY COMPANY,<br>DEDICATED TO VISUALLY TRANSFORMING AFRICAN STORIES INTO<br>DYNAMIC COMIC BOOKS AND GRAPHIC NOVELS.</p>
+            <div class="divider"></div>
+            <h3>OUR SERVICES:</h3>
+            <ul class="services-list">
+                <li>COMIC BOOK ADAPTATION: NOVEL TO COMIC</li>
+                <li>GRAPHIC NOVELS CUSTOM ILLUSTRATION & ART DESIGN</li>
+                <li>TALENT DEVELOPMENT</li>
+                <li>COLLABORATIVE PROJECTS</li>
+                <li>ADVERTISEMENTS</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Page 7 - Stage -->
+    <section id="stage" class="page">
+        <h2 class="section-title">TAMBUA AFRIKA STAGE</h2>
+        <p class="highlight">SEE Africa, Hear Africa, Feel Africa</p>
+        <div class="content">
+            <h3>About us</h3>
+            <p>We are dedicated to producing and showcasing authentic African theatre and live performances.<br>We exist to tell stories that matter, blending tradition, modernity, and creativity to create unforgettable experiences.</p>
+            <div class="divider"></div>
+            <h3>Our services</h3>
+            <div class="stage-services">
+                <div class="stage-service">Theatre Productions</div>
+                <div class="stage-service">Musical Theatre & Performances</div>
+                <div class="stage-service">Spoken Word & Poetry Performances</div>
+                <div class="stage-service">Training & Capacity Building</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 8 - Contact -->
+    <section id="contact" class="page">
+        <h2 class="section-title">CONTACT US</h2>
+        <div class="contact-info">
+            <p>+254117379714</p>
+            <p>tambuaafrikastudios@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Page 9 - Thank You -->
+    <section id="thank-you" class="page">
+        <h2>THANK YOU</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active navigation link
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
